@@ -16,9 +16,14 @@
 #   twitter: corneliusfiddlebone
 
 Tian WU:
-  name: Tian Wu
+  name: Phillip Wu
   twitter: "@Phi_W5"
+  github: "tian3rd"
+  picture: "/images/phi-avatar.jpg"
   links:
     - title: Twitter
       url: https://twitter.com/phi_W5
       icon: fab fa-twitter-square
+    - title: GitHub
+      url: https://github.com/tian3rd
+      icon: fab fa-github-square
