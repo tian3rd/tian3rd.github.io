@@ -5,7 +5,7 @@ tag:
   - "hack"
   - "life skills"
 category:
-  - "life"
+  - "Life"
 last_modified_at: 2021-07-26
 ---
 
