@@ -124,3 +124,10 @@ footer_links:
   - title: Feed
     url: atom.xml
     icon: fas fa-rss-square
+
+# Excludes
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
