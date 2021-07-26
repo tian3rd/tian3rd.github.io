@@ -103,7 +103,7 @@ defaults:
 collections:
   "readings":
     output: true
-  "life":
+  "pieces":
     output: true
 
 # Site Author
