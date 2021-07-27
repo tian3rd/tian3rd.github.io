@@ -3,6 +3,178 @@
 sitemap: false
 ---
 
+// 1linelayouts.glitch.me
+// example 1: super centered
+.ex1 {
+  display: grid;
+  place-items: center;
+  margin-bottom: 15px;
+}
+.parent1 {
+  /* example 1: super center */
+  display: grid;
+  place-items: center;
+
+  border-radius: 5px;
+
+  background: lightblue;
+  width: 350px;
+  height: 200px;
+
+  //   make it resizable
+  resize: both;
+  overflow: auto;
+}
+.box1 {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid red;
+  background: lightpink;
+  //   font-size: 2rem;
+  text-align: center;
+}
+
+// example 2: flex pancakes
+.ex2 {
+  display: grid;
+  place-items: center;
+  margin-bottom: 15px;
+}
+.parent2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 5px;
+  background: lightblue;
+  width: 350px;
+  height: 200px;
+  //   make it resizable
+  resize: both;
+  overflow: auto;
+}
+.box2 {
+  // flex: flex-grow flex-shrink flex-size;
+  // strech to take up space evenly: flex-grow
+  flex: 1 1 150px;
+  //   no stretch
+  //   flex: 0 1 150px;
+  margin: 5px;
+  border-radius: 10px;
+  border: 1px solid red;
+  background: lightgoldenrodyellow;
+  //   font-size: 2rem;
+  text-align: center;
+  color: midnightblue;
+}
+
+// example 3: sidebar stays
+.ex3 {
+  display: grid;
+  place-items: center;
+  margin-bottom: 15px;
+  color: midnightblue;
+}
+.parent3 {
+  display: grid;
+  grid-template-columns: minmax(120px, 25%) auto;
+  border-radius: 5px;
+  width: 350px;
+  height: 200px;
+  resize: both;
+  overflow: auto;
+}
+.sidebar-left {
+  background-color: lightyellow;
+  border: 1px dotted red;
+  padding: 10px;
+}
+.content-right {
+  background-color: lightcoral;
+  padding: 10px;
+}
+
+// example 4: stacked cakes
+.ex4 {
+  display: grid;
+  place-items: center;
+  margin-bottom: 15px;
+  color: darkslateblue;
+}
+.parent4 {
+  display: grid;
+  // 1fr: remaining fractional unit
+  grid-template-rows: auto 1fr auto;
+  border-radius: 5px;
+  width: 350px;
+  height: 200px;
+  resize: both;
+  overflow: auto;
+}
+.top-cake-header {
+  background-color: lightblue;
+  border: 1px dashed white;
+  padding: 5px;
+}
+.middle-cake-main {
+  background-color: lightsalmon;
+  border: 1px dotted purple;
+  padding: 5px;
+}
+.bottom-cake-footer {
+  background-color: lightcyan;
+  border: 1px dashed white;
+  padding: 5px;
+}
+
+// example 5
+.ex5 {
+  display: grid;
+  place-items: center;
+  margin-bottom: 15px;
+  color: darkblue;
+}
+.parent5 {
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr auto;
+  border-radius: 5px;
+  border: 1px solid white;
+  width: 350px;
+  height: 200px;
+  resize: both;
+  overflow: auto;
+}
+.section-header-content {
+  background-color: pink;
+  padding: 5px;
+  //  span across all three: 1 - 2 - 3 (4 not included)
+  grid-column: 1 / 4;
+  border: 1px dotted pink;
+}
+.section-left-sidebar {
+  background-color: lightcyan;
+  padding: 5px;
+  grid-column: 1 / 2;
+  border: 1px dotted cyan;
+}
+.section-main-content {
+  background-color: coral;
+  padding: 5px;
+  grid-column: 2 / 3;
+  border: 1px dotted darkslateblue;
+}
+.section-right-sidebar {
+  background-color: lightyellow;
+  padding: 5px;
+  grid-column: 3 / 4;
+  border: 1px dotted yellow;
+}
+.section-footer-content {
+  background-color: lightgreen;
+  padding: 5px;
+  grid-column: 1 / 5;
+  border: 1px dotted green;
+}
+
 @charset "utf-8";
 
 @import "so-simple";
