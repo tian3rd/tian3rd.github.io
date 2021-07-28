@@ -169,3 +169,129 @@
   grid-column: 1 / 5;
   border: 1px dotted green;
 }
+
+// example 6: Span-12
+
+.ex6 {
+  display: grid;
+  place-items: center;
+  margin-bottom: 15px;
+  color: darkslateblue;
+}
+.parent6 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  background-color: lightgray;
+  border-radius: 5px;
+  width: 350px;
+  height: 200px;
+  resize: both;
+  overflow: auto;
+}
+.span-12 {
+  grid-column: 1 / 13;
+  background-color: lightgreen;
+  margin: 2px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.span-6 {
+  grid-column: 2 / 8;
+  background-color: lightpink;
+  margin: 2px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.span-3-left {
+  grid-column: 1 / 4;
+  background-color: lightcoral;
+  margin: 2px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.span-4-middle {
+  grid-column: 4 / 8;
+  background-color: lightskyblue;
+  margin: 2px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.span-5-right {
+  grid-column: 8 / 13;
+  background-color: lightsteelblue;
+  margin: 2px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+// example 7: RAM (Repeat, Auto, Minmax)
+.ex7 {
+  display: grid;
+  place-items: center;
+  margin-bottom: 15px;
+  color: darkblue;
+}
+.parent7 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  background-color: lightyellow;
+  border-radius: 5px;
+  width: 350px;
+  height: 200px;
+  resize: both;
+  overflow: auto;
+}
+.box {
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  background-color: lightseagreen;
+}
+
+// example 8: Card Line Up
+.ex8 {
+  display: grid;
+  place-items: center;
+  margin-bottom: 15px;
+  color: darkblue;
+}
+.parent8 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 700px;
+  //   attention here to set height as auto
+  height: auto;
+  border-radius: 5px;
+  background-color: lightgoldenrodyellow;
+  grid-gap: 1rem;
+  resize: both;
+  overflow: auto;
+}
+.card-template {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: lightpink;
+}
+.card-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+}
+.card-description {
+  margin: 5px;
+  padding: 5px;
+}
+.card-pic {
+  height: 100px;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: lightseagreen;
+}

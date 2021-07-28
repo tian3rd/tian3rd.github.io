@@ -193,3 +193,157 @@ It is the classic layout using `grid-template` and `grid-column`. Here is the co
   grid-column: 1 / 5;
 }
 ```
+
+## 6. 12-Span Grid: repeat()
+
+<div class="ex6">
+  <div class="parent6">
+    <div class="span-12" contenteditable>Span 12</div>
+    <div class="span-6" contenteditable>Span 6</div>
+    <div class="span-3-left" contenteditable>Span 3</div>
+    <div class="span-4-middle" contenteditable>Span 4</div>
+    <div class="span-5-right" contenteditable>Span 5</div>
+  </div>
+</div>
+
+So basically, we can get extra flexibility by combining `grid-template-columns` in parent and `grid-column` in children. We can simplify the code using `repeat()` function. Here is the code:
+
+```html
+<!-- html -->
+<div class="parent6">
+  <div class="span-12" contenteditable>Span 12</div>
+  <div class="span-6" contenteditable>Span 6</div>
+  <div class="span-3-left" contenteditable>Span 3</div>
+  <div class="span-4-middle" contenteditable>Span 4</div>
+  <div class="span-5-right" contenteditable>Span 5</div>
+</div>
+```
+
+```css
+/* css */
+.parent6 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.span-12 {
+  grid-column: 1 / 12;
+}
+.span-6 {
+  grid-column: 2 / 8;
+}
+.span-3-left {
+  grid-column: 1 / 4;
+}
+.span-4-middle {
+  grid-column: 4 / 8;
+}
+.span-5-right {
+  grid-column: 8 / 13;
+}
+```
+
+## 7. RAM (Repeat, Auto, Minmax)
+
+<div class="ex7">
+  <div class="parent7">
+    <div class="box" contenteditable>1</div>
+    <div class="box" contenteditable>2</div>
+    <div class="box" contenteditable>3</div>
+    <div class="box" contenteditable>4</div>
+  </div>
+</div>
+
+Flexible layout to be responsive: `grid-template-columns: repeat(auto-fit, minmax(<base>, 1fr))`, so here is the code:
+
+```html
+<!-- html -->
+<div class="parent7">
+  <div class="box" contenteditable>1</div>
+  <div class="box" contenteditable>2</div>
+  <div class="box" contenteditable>3</div>
+  <div class="box" contenteditable>4</div>
+</div>
+```
+
+```css
+/* css */
+.parent7 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.box {
+  display: grid;
+  place-items: center;
+}
+```
+
+## 8. Card Line Up: Flex + Justify-content
+
+<div class="ex8">
+    <div class="parent8">
+      <div class="card-template">
+        <div class="card-title">Card 1</div>
+        <div class="card-description" contenteditable>
+          Medium length of description here for test of content.
+        </div>
+        <div class="card-pic"></div>
+      </div>
+      <div class="card-template">
+        <div class="card-title">Card 2</div>
+        <div class="card-description" contenteditable>
+          Long length of description here for test of content and edge cases.
+          Hello world! Hello again!
+        </div>
+        <div class="card-pic"></div>
+      </div>
+      <div class="card-template">
+        <div class="card-title">Card 3</div>
+        <div class="card-description" contenteditable>Short description.</div>
+        <div class="card-pic"></div>
+      </div>
+    </div>
+</div>
+
+Wow, this takes some time to debug... But it's a pretty neat trick to master. Using `flex` layout for cards (with `flex-direction: column`) and applying `justify-content: space-between` to align corresponding elements. So here's the code:
+
+```html
+<!-- html -->
+<div class="parent8">
+  <div class="card-template">
+    <div class="card-title">Card 1</div>
+    <div class="card-description" contenteditable>
+      Medium length of description here for test of content.
+    </div>
+    <div class="card-pic"></div>
+  </div>
+  <div class="card-template">
+    <div class="card-title">Card 2</div>
+    <div class="card-description" contenteditable>
+      Long length of description here for test of content and edge cases. Hello
+      world! Hello again!
+    </div>
+    <div class="card-pic"></div>
+  </div>
+  <div class="card-template">
+    <div class="card-title">Card 3</div>
+    <div class="card-description" contenteditable>Short description.</div>
+    <div class="card-pic"></div>
+  </div>
+</div>
+```
+
+```css
+/* css */
+.parent8 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 700px;
+  //   attention here to set height as auto
+  height: auto;
+}
+.card-template {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+```
