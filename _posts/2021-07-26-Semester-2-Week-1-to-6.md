@@ -21,35 +21,34 @@ This semester I'll focus on the fundamentals, namely **Programming**, **Computer
 - [Introduction to Algorithms](https://www.bilibili.com/video/BV1Rv411e7jE)
   - More [versions](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/)
 
-(
-For fun:
+_For fun_:
 
 - [Linux rookie](https://www.bilibili.com/video/BV1Ki4y1T7nN)
 - [Computer Systems Engineering](https://www.bilibili.com/video/BV1Ai4y1P7Fb)
-  )
+- [Programming Abstraction in C++ ](https://www.bilibili.com/video/BV1PK411A7S4)
 
 ## Week 1: JavaScript
 
-- Review and reimplement Simon - Resources: [Udemy Web Dev]() + [Design Code]() - Time expectancy: 20 hours
+- Review and reimplement Simon - Resources: [Udemy Web Dev](https://www.udemy.com/course/the-complete-web-development-bootcamp) + [Design Code](https://www.designcode.io) - Time expectancy: 20 hours
   _Outcome_:
 
 ## Week 2: Web Design
 
 - Figma design and React implementation
-  - Resources: [Design Code]() + [React 全家桶]()
+  - Resources: [Design Code](https://www.designcode.io) + [React 全家桶](https://www.ituring.com.cn/book/2673)
   - Time expectancy: 20 hours
 
 ## Week 3 - 4: Boardgame reimplementation
 
-    - Resources: [COMP6710 boardgames 2020 S1]() + [COMP6710 boardgames 2021 S1]()
-    - Time expectancy: 40 hours
+- Resources: [COMP6710 boardgames 2020 S1]() + [COMP6710 boardgames 2021 S1]()
+- Time expectancy: 40 hours
 
 ## Week 5 - 6: Resume integration
 
-    - Resources: [My blog]() + [Webgames]()
-    - Time expectancy: 10 hours
+- Resources: [My blog]() + [Webgames]()
+- Time expectancy: 10 hours
 
 ## Week 1 - 6: Algorithms
 
-    - Resources: [C++ Primer]() + [Exercism]() + [CLRS]()
-    - Time expectancy: 40 hours
+- Resources: [C++ Primer]() + [Exercism]() + [CLRS]()
+- Time expectancy: 40 hours
