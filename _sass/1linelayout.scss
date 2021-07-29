@@ -269,6 +269,11 @@
   resize: both;
   overflow: auto;
 }
+@media only screen and (max-width: 768px) {
+  [class="parent8"] {
+    width: 400px;
+  }
+}
 .card-template {
   display: flex;
   flex-direction: column;
@@ -278,7 +283,7 @@
   background-color: lightpink;
 }
 .card-title {
-  font-size: 2rem;
+  font-size: 1.5em;
   font-weight: bold;
   text-align: center;
   margin: 5px;
