@@ -18,7 +18,7 @@ This semester I'll focus on the fundamentals, namely **Programming**, **Computer
   - https://cs61a.org
 - [Computer Systems: A Programmer's Perspective](https://www.bilibili.com/video/BV1Rv411e7jE)
   - http://csapp.cs.cmu.edu/3e/labs.html
-- [Introduction to Algorithms](https://www.bilibili.com/video/BV1Rv411e7jE)
+- [Introduction to Algorithms](https://www.bilibili.com/video/BV1Th411Y72K)
   - More [versions](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/)
 
 _For fun_:
