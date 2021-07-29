@@ -347,3 +347,53 @@ Wow, this takes some time to debug... But it's a pretty neat trick to master. Us
   justify-content: space-between;
 }
 ```
+
+## 9. Clamping: clamp() && Keep ratio: apect-ratio()
+
+<div class="ex9">
+  <div class="parent9">
+    <div class="card-template2">
+      <h3>Card</h3>
+      <div class="card-description2" contenteditable>
+        Here is the body text of the card. Here's some more jabbish...
+      </div>
+      <div class="card-pic2"></div>
+    </div>
+  </div>
+</div>
+
+Basically, it uses in a card where you don't want to comprimise the card size when screen gets smaller, but aslo don't expand too much on a bigger screen. `clamp()` function offers a lower and upper bounder for the card to adapt to. And the `aspect-ratio: width / height` respect the ratio of the image or video when the screen size changes. Here's the code:
+
+```html
+<!-- html -->
+<div class="parent9">
+  <div class="card-template2">
+    <h3>Card</h3>
+    <div class="card-description2" contenteditable>
+      Here is the body text of the card. Here's some more...
+    </div>
+    <div class="card-pic2"></div>
+  </div>
+</div>
+```
+
+```css
+/* css */
+.parent9 {
+  display: grid;
+  place-items: center;
+  width: 350px;
+  height: 350px;
+}
+.card-template2 {
+  display: flex;
+  flex-direction: column;
+  // set width to be 23ch <= w <= 46ch
+  width: clamp(23ch, 80%, 46ch);
+}
+.card-pic2 {
+  background-color: lightcoral;
+  // now supports chrome and firefox, not safari...
+  aspect-ratio: 16 / 9;
+}
+```
