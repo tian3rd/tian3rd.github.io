@@ -1,24 +1,27 @@
 var buttonColors = ["red", "blue", "green", "yellow"];
+// no big different in the following initialisation
 var gamePattern = new Array();
 var userChosenPattern = [];
-
 var started = false;
 var level = 0;
-
 var userClicks = 0;
 
+// generate level seq with animation and sound
 function nextSequence() {
+  // at the start of the game states
   userClicks = 0;
   userChosenPattern = [];
   // increse level by 1
   level += 1;
   $("#level-title").text("Level " + level);
   gamePattern = new Array();
+  //   generate level seq
   for (var i = 0; i < level; i++) {
     var randomNumber = Math.floor(Math.random() * 4);
     var randomChosenColor = buttonColors[randomNumber];
     gamePattern.push(randomChosenColor);
   }
+  //   beware of delay, do not contain the anonymous function directly in a loop
   for (var k = 0; k < level; k++) {
     // use jQuery to select chosen color to flash
     flashSound(k);
@@ -27,8 +30,10 @@ function nextSequence() {
 
 // flash button and play sound after j seconds using delay.
 function flashSound(j) {
+  // because there's an anonymous function, don't call it in a loop
   setTimeout(function () {
     $("#" + gamePattern[j])
+      // flash animation
       .fadeOut(100)
       .fadeIn(100);
     playSound(gamePattern[j]);
@@ -41,6 +46,12 @@ function flashSound(j) {
 //   userChosenPattern.push(userChosenColor);
 // });
 
+/* main logic while a user clicks a button:
+ * 1. play sound, animate
+ * 2. check if the seq is right or not: wrong -> restart at level 0
+ * 3. check if the seq has completed: if correct seq -> next level
+ * 4. whenever wrong, display gameover settings
+ */
 $(".btn").click(function () {
   var userChosenColor = $(this).attr("id");
   userChosenPattern.push(userChosenColor);
@@ -56,9 +67,9 @@ $(".btn").click(function () {
       }, 1000);
       level = 0;
       started = false;
-      var gameOverSound = new Audio("/sounds/wrong.mp3");
-      gameOverSound.play();
-      $("#level-title").html("Game Over <p>Press any key</>");
+      // game over sound
+      playSound("wrong");
+      $("#level-title").html("Game Over <p>Press any key</p>");
     }
     if (userChosenPattern.length == gamePattern.length && started) {
       $("#level-title").text("Bingo!");
@@ -77,12 +88,14 @@ function playSound(name) {
 
 function animatePress(currentColor) {
   $("#" + currentColor).addClass("pressed");
+  // add and remove later for animation
   setTimeout(function () {
     $("#" + currentColor).removeClass("pressed");
   }, 100);
 }
 
-$(document).on("keydown", function (e) {
+// listen for a key event to start the game
+$(document).on("keydown", function () {
   if (!started) {
     started = true;
     nextSequence();
