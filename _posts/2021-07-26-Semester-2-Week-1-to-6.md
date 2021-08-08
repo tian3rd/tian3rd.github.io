@@ -30,13 +30,16 @@ _For fun_:
 ## Week 1: JavaScript
 
 - Review and reimplement Simon - Resources: [Udemy Web Dev](https://www.udemy.com/course/the-complete-web-development-bootcamp) + [Design Code](https://www.designcode.io) - Time expectancy: 20 hours
-  _Outcome_:
+
+_Outcome_: Finished Simon. On track.
 
 ## Week 2: Web Design
 
 - Figma design and React implementation
   - Resources: [Design Code](https://www.designcode.io) + [React 全家桶](https://www.ituring.com.cn/book/2673)
   - Time expectancy: 20 hours
+
+_Outcome_: A little distracted by web development. Still learning database and moving towards 'React.js` chapter.
 
 ## Week 3 - 4: Boardgame reimplementation
 
