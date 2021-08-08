@@ -143,3 +143,9 @@ Examples of responsive layout:
 ## HTML
 
 ## JavaScript
+
+## APIs
+
+1. JokeAPI: https://sv443.net/jokeapi/v2/
+2. OpenStreetMap: https://wiki.openstreetmap.org/wiki/API_v0.6
+3. OpenWeather: https://openweathermap.org/api
