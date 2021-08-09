@@ -1,4 +1,5 @@
 ---
+title: "Volunteer Journey"
 layout: post
 tag:
   - "campus"
@@ -9,6 +10,9 @@ category:
   - "Volunteer"
   - "Life"
 ---
+
+> 授人以鱼不如授人以渔
+> Give a man a fish, and you feed him for a day; show him how to catch a fish, and you feed him for a lifetime.
 
 {% include toc %}
 
