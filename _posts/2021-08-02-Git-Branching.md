@@ -121,6 +121,38 @@ Like the `~` modifier, the `^` modifier also accepts an optional number after it
 
 3. Branch spaghetti
 
+### Push & Pull -- Git Remotes!
+
+1. Git clone
+
+2. Remote branches
+   Remote branches `<remote name>/<branch name>` have the properties that when you check them out, you are put inot detached `HEAD` mode.
+
+3. Fetch
+   `git fetch` (sync): 1. download commits local doesn't have; 2. updates where our remote branch points (e.g. `origin/main`). It _doesn't_ do: doesn't change anything about local state.
+
+4. Pull
+   Once you have new commits locally, you can incorporate them as if they were just commits on other branches! This means you could execute commands like:
+   `git cherry-pick o/main`
+   `git rebase o/main`
+   `git merge o/main`
+   In fact, the workflow of fetching remote changes and then merging them is so common that git actually provides a command that does both at once! That command is `git pull`.
+
+5. Push
+   `git push` is responsible for uploading your changes to a specified remote and updating that remote to incorporate your new commits. Once `git push` completes, all your friends can then download your work from the remote
+   `git push` with no argument varies depending on `push.default`
+
+6. Diverged work
+   Imagine you clone a repository on Monday and start dabbling on a side feature. By Friday you are ready to publish your feature -- but oh no! Your coworkers have written a bunch of code during the week that's made your feature out of date (and obsolete). They've also published these commits to the shared remote repository, so now your work is based on an old version of the project that's no longer relevant.
+   In this case, the command `git push` is ambiguous. If you run `git push`, should git change the remote repository back to what it was on Monday? Should it try to add your code in while not removing the new code? Or should it totally ignore your changes since they are totally out of date?
+   Because there is so much ambiguity in this situation (where history has diverged), git doesn't allow you to push your changes. It actually forces you to incorporate the latest state of the remote before being able to share your work.
+
+7. Remote Rejected! (Locked Main)
+   Why was it rejected?
+   The remote rejected the push of commits directly to main because of the policy on main requiring pull requests to instead be used. You meant to follow the process creating a branch then pushing that branch and doing a pull request, but you forgot and committed directly to main. Now you are stuck and cannot push your changes.
+   The _solution_
+   Create another branch called feature and push that to the remote. Also reset your main back to be in sync with the remote otherwise you may have issues next time you do a pull and someone else's commit conflicts with yours.
+
 ### Rename both local and remote branches
 
 ## Settings
