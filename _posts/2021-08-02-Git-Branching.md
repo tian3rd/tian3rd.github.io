@@ -130,6 +130,7 @@ Like the `~` modifier, the `^` modifier also accepts an optional number after it
 
 3. Fetch
    `git fetch` (sync): 1. download commits local doesn't have; 2. updates where our remote branch points (e.g. `origin/main`). It _doesn't_ do: doesn't change anything about local state.
+   `git fetch` usually talks to the remote repository through the Internet (via a protocol like `http://` or `git://`)
 
 4. Pull
    Once you have new commits locally, you can incorporate them as if they were just commits on other branches! This means you could execute commands like:
@@ -152,6 +153,76 @@ Like the `~` modifier, the `^` modifier also accepts an optional number after it
    The remote rejected the push of commits directly to main because of the policy on main requiring pull requests to instead be used. You meant to follow the process creating a branch then pushing that branch and doing a pull request, but you forgot and committed directly to main. Now you are stuck and cannot push your changes.
    The _solution_
    Create another branch called feature and push that to the remote. Also reset your main back to be in sync with the remote otherwise you may have issues next time you do a pull and someone else's commit conflicts with yours.
+
+### To Origin And Beyond -- Advanced Git Remotes!
+
+1. Merging feature branches
+   Some developers only push and pull when on the main branch -- that way main always stays updated to what is on the remote (`origin/main`).
+
+2. Merging with remotes
+   In order to push new updates to the remote, all you need to do is incorporate the latest changes from the remote. That means you can either rebase or merge in the remote branch (e.g. `origin/main`).
+   There's a lot of debate about the tradeoffs between merging and rebasing in the development community. Here are the general pros / cons of rebasing:
+   _Pros_ - Rebasing makes your commit tree look very clean since everything is in a straight line
+   _Cons_ - Rebasing modifies the (apparent) history of the commit tree. For example, commit C1 can be rebased past C3. It then appears that the work for C1' came after C3 when in reality it was completed beforehand.
+
+3. Remote-tracking branches
+   One thing that might have seemed "magical" about the last few lessons is that git knew the main branch was related to `origin/main`. Sure these branches have similar names and it might make logical sense to connect the main branch on the remote to the local main branch, but this connection is demonstrated clearly in two scenarios:
+
+   - During a pull operation, commits are downloaded onto o/main and then merged into the main branch. The implied target of the merge is determined from this connection.
+   - During a push operation, work from the main branch was pushed onto the remote's main branch (which was then represented by `origin/main` locally). The destination of the push is determined from the connection between main and `origin/main`.
+
+   Long story short, this connection between main and `origin/main` is explained simply by the "remote tracking" property of branches. The main branch is set to track `origin/main` -- this means there is an implied merge target and implied push destination for the main branch.
+   You may be wondering how this property got set on the main branch when you didn't run any commands to specify it. Well, when you clone a repository with git, this property is actually set for you automatically.
+   During a clone, git creates a remote branch for every branch on the remote (aka branches like `origin/main`). It then creates a local branch that tracks the currently active branch on the remote, which is main in most cases.
+   Once `git clone` is complete, you only have one local branch (so you aren't overwhelmed) but you can see all the different branches on the remote (if you happen to be very curious). It's the best of both worlds! This also explains why you may see the following command output when cloning: `local branch "main" set to track remote branch "origin/main"`
+   You can make any arbitrary branch track o/main, and if you do so, that branch will have the same implied push destination and merge target as main. This means you can run git push on a branch named totallyNotMain and have your work pushed to the main branch on the remote!
+
+   There are two ways to set this property. The first is to checkout a new branch by using a remote branch as the specified ref. Running
+
+   - `git checkout -b totallyNotMain origin/main`
+
+   Creates a new branch named `totallyNotMain` and sets it to track `origin/main`.
+   Another way to set remote tracking on a branch is to simply use the git branch -u option. Running
+
+   - `git branch -u origin/main foo`
+
+   will set the foo branch to track `origin/main`. If foo is currently checked out you can even leave it off: `git branch -u o/main`
+
+4. Push arguments
+   Git figured out the remote and the branch to push to by looking at the properties of the currently checked out branch (the remote that it "tracks"). This is the behavior with no arguments specified, but git push can optionally take arguments in the form of:
+   `git push <remote> <place>`
+   Issuing the command:
+   `git push origin main`
+   translates to this in English:
+   Go to the branch named "main" in my repository, grab all the commits, and then go to the branch "main" on the remote named "origin". Place whatever commits are missing on that branch and then tell me when you're done.
+   By specifying main as the "place" argument, we told git where the commits will come from and where the commits will go. It's essentially the "place" or "location" to synchronize between the two repositories. Keep in mind that since we told git everything it needs to know (by specifying both arguments), it totally ignores where we are checked out!
+
+5. `<place>` argument details
+   Previously, when we specified main as the place argument for git push, we specified both the source of where the commits would come from and the destination of where the commits would go.You might then be wondering -- what if we wanted the source and destination to be different? What if you wanted to push commits from the foo branch locally onto the bar branch on remote?
+   In order to specify both the source and the destination of <place>, simply join the two together with a colon:
+
+   `git push origin <source>:<destination>`
+
+   This is commonly referred to as a colon refspec. Refspec is just a fancy name for a location that git can figure out (like the branch `foo` or even just `HEAD~1`). Once you are specifying both the source and destination independently, you can get quite fancy and precise with remote commands. Remember, source is any location that git will understand.
+
+6. Fetch arguments
+   The arguments for `git fetch` are actually very, very similar to those for git push. It's the same type of concepts but just applied in the opposite direction (since now you are downloading commits rather than uploading).
+   If you specify a place with git fetch like in the following command:
+
+   `git fetch origin foo`
+
+   Git will go to the foo branch on the remote, grab all the commits that aren't present locally, and then plop them down onto the o/foo branch locally. `git fetch` doesn't update your local non-remote branches, it only downloads the commits (so you can inspect / merge them later).
+
+7. Source of nothing (Oddities of `<source>`)
+   Git abuses the `<source>` parameter in two weird ways. These two abuses come from the fact that you can technically specify "nothing" as a valid source for both git push and git fetch. The way you specify nothing is via an empty argument: `git push origin :side` `git fetch origin :bugFix`
+   What does pushing "nothing" to a remote branch do? It deletes it!
+   Finally, fetching "nothing" to a place locally actually makes a new branch.
+
+8. Git pull arguments
+   `git pull` at the end of the day is really just shorthand for a fetch followed by _merging_ in whatever was just fetched. You can think of it as running git fetch with the same arguments specified and then merging in where those commits ended up.
+   This applies even when you use crazy-complicated arguments as well.
+   `git pull origin foo` is equal to: `git fetch origin foo; git merge o/foo`
+   `git pull origin bar~1:bugFix` is equal to: `git fetch origin bar~1:bugFix; git merge bugFix`
 
 ### Rename both local and remote branches
 
