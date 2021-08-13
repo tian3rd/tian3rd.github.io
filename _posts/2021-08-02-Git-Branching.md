@@ -1,5 +1,10 @@
 ---
 layout: post
+tag:
+  - "tutorial notes"
+  - "resources"
+category:
+  - "Git"
 last_modified_at: 2021-08-06
 ---
 
@@ -11,7 +16,7 @@ last_modified_at: 2021-08-06
 
 If come across any problems, first use `tldr git <command>` to look it up.
 The official guide is <https://git-scm.com/docs>
-Also, there are some handy tools to solidate the knowledge such as <https://learngitbranching.js.org>
+Also, there are some handy tools to solidate the knowledge such as <https://learngitbranching.js.org>. I have included my handwritten note [here](../assets/Git_branching.pdf)
 
 ### Introduction to Git Commits
 
