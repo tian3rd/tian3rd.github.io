@@ -21,7 +21,8 @@ last_modified_at: 2021-07-28
 ### Design and UI
 
 - [awwwards.com](https://awwwards.com/websites)
-- [ui-patterns]()
+- [ui-patterns](http://ui-patterns.com/patterns)
+- [colorhunt](https://colorhunt.co)
 - [dribbble](https://dribbble.com)
 - Wireframs/mockups/prototypes
   - [sneakpeekit](https://sneakpeekit.com)
@@ -30,6 +31,7 @@ last_modified_at: 2021-07-28
 ### Code Snippets
 
 - Quick css, html and js rendering: [codepen.io](https://codepen.io/pen/)
+- Quick `React.js` implementation: [codesandbox](https://codesandbox.io/)
 - Rendering with bootstrap: [codeplay](https://codeplay.com)
 - Specific docs for web dev:
 - CSS button generatore: [cssbuttoncreator](https://cssbuttoncreator.com)
@@ -143,6 +145,8 @@ Examples of responsive layout:
 ## HTML
 
 ## JavaScript
+
+Javascript style guide: <https://github.com/airbnb/javascript>
 
 ## APIs
 
