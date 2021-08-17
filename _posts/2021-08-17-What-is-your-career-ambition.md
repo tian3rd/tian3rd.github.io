@@ -6,9 +6,7 @@ category:
   - "Life"
 ---
 
-## What is your career ambition?
-
-> work to become, not to acquire. --[Elbert Hubbard](https://en.wikipedia.org/wiki/Elbert_Hubbard)
+> Work to become, not to acquire. --[Elbert Hubbard](https://en.wikipedia.org/wiki/Elbert_Hubbard)
 
 If I look myself in the mirror and ask the question: _what is your career ambition_, I would probably get a confused emoji🤨 as an answer. But after several hours’ pondering, I might have a clue.
 
