@@ -18,6 +18,10 @@ last_modified_at: 2021-07-28
 
 ## General
 
+### General Statistics
+
+- [Internet live stats](https://www.internetlivestats.com/)
+
 ### Design and UI
 
 - [awwwards.com](https://awwwards.com/websites)
@@ -55,6 +59,7 @@ last_modified_at: 2021-07-28
   - free site like [fontawesome](https://fontawesome.com)
     - adding ``
 - GIFs: [GIPHY](https://giphy.com)
+- Optimize images to small sizes: https://formulae.brew.sh/cask/imageoptim
 
 ### Unicode & emojis
 
@@ -64,6 +69,10 @@ last_modified_at: 2021-07-28
 - [GitHub Flavored unicode](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)
 
 ## CSS
+
+- Vendor prefixes css: https://www.thoughtco.com/css-vendor-prefixes-3466867
+- To see if css properties are supported in certain browsers: https://caniuse.com/
+- CSS tricks: https://css-tricks.com/snippets/css/
 
 ### Layout
 
@@ -147,6 +156,12 @@ Examples of responsive layout:
 ## JavaScript
 
 Javascript style guide: <https://github.com/airbnb/javascript>
+
+## Databases
+
+### Online database pratices
+
+- [Sqliteonline](https://sqliteonline.com/)
 
 ## APIs
 
