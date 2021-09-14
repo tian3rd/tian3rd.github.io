@@ -6,9 +6,10 @@ tag:
   - "html"
   - "projects"
   - "hack"
+  - "js"
 category:
   - "Web Dev"
-  - "Javascript"
+  - "React"
 ---
 
 > Teach myself `React.js` in 10 weeks.
