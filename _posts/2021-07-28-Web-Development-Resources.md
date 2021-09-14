@@ -6,6 +6,7 @@ tag:
   - "design"
   - "html"
   - "js"
+  - "images"
 category:
   - "Resources"
   - "Web Dev"
@@ -60,6 +61,14 @@ last_modified_at: 2021-07-28
     - adding ``
 - GIFs: [GIPHY](https://giphy.com)
 - Optimize images to small sizes: https://formulae.brew.sh/cask/imageoptim
+
+### Images resouces
+
+- Pixabay: [https://pixabay.com/](https://pixabay.com/)
+- Unsplash: [https://unsplash.com](https://unsplash.com/)
+- Pexels: [https://www.pexels.com/](https://www.pexels.com/)
+- `$`Shutterstock: [https://www.shutterstock.com
+  ](https://www.shutterstock.com)
 
 ### Unicode & emojis
 
@@ -168,3 +177,12 @@ Javascript style guide: <https://github.com/airbnb/javascript>
 1. JokeAPI: https://sv443.net/jokeapi/v2/
 2. OpenStreetMap: https://wiki.openstreetmap.org/wiki/API_v0.6
 3. OpenWeather: https://openweathermap.org/api
+
+## TCP/IP
+
+- HTTP response status codes: <https://developer.mozilla.org/en-US/docs/Web/HTTP/Status>
+  - 1: hold on (info responses)
+  - 2: here you go (successful)
+  - 3: go away (redirects)
+  - 4: you fucked up (client errors)
+  - 5: i fucked up (server errors)
