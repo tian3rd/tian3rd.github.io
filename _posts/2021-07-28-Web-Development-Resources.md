@@ -45,6 +45,7 @@ last_modified_at: 2021-07-28
 ### Documentation
 
 - Documentations online: [devdocs.io](https://devdocs.io)
+- Cheatsheets online: [devhints.io](https://devhints.io/)
 - [mdn web docs](https://developer.mozilla.org/en-US/)
 - [w3school](https://www.w3schools.com)
 - CSS property keywords: [css property names](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#index)
