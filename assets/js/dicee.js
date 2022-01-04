@@ -17,5 +17,5 @@ if (randomDice1 == randomDice2) {
 } else if (randomDice1 < randomDice2) {
   document.querySelector("h1").textContent = "🚩 Player 2 Wins!";
 } else {
-  document.querySelector("h1").textContent = "Player 1 Wins!🚩";
+  document.querySelector("h1").textContent = "Player 1 Wins! 🚩";
 }
