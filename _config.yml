@@ -109,7 +109,8 @@ collections:
 # Site Author
 author:
   name: Phillip Wu
-  picture: "/images/phi-avatar.jpg"
+  # picture: "/images/phi-avatar.jpg"
+  picture: "/images/mountain-phi.jpg"
   email: "tianwu@outlook.com"
   links:
     - title: Twitter
